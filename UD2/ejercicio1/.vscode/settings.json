@@ -1,5 +1,15 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src",
+        "ejercicio08",
+        "ejercicio07",
+        "ejercicio06",
+        "ejercicio05",
+        "ejercicio04",
+        "ejercicio03",
+        "ejercicio02",
+        "ejercicio01"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
