@@ -1,5 +1,3 @@
-package UD1;
-
 public class ejercico3 {
     public static void main(String[] args) throws Exception {
         System.out.printf("%-10s    %-10s", "computer","ordenador \n");
