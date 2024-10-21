@@ -56,9 +56,9 @@ public class ejercicioextra2 {
         System.out.printf("%-10s %15.2f %10s %15.2f \n", producto3, preciouni3, cantidad3, total2);
         System.out.println("--------------------------------------------------------");
         System.out.printf("%-10s %43.2f \n","Subtotal:",subtotal);
-        System.out.printf("%-16s %36.2f \n","Impuestos (18%):",impuesto);
-        System.out.printf("%-16s %36.2f \n","Descuento (10%):",descuento);
-        System.out.println("--------------------------------------------------------");
+        System.out.printf("\033[0;31m%-16s %36.2f \n","Impuestos (18%):",impuesto);
+        System.out.printf("\033[0;32m%-16s %36.2f \n","Descuento (10%):",descuento);
+        System.out.println("\033[0m--------------------------------------------------------");
         System.out.printf("%-13s %39.2f \n","Total a pagar:",totalapagar);
 
     }
