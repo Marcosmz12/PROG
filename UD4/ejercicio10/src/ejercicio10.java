@@ -100,5 +100,6 @@ public class ejercicio10 {
                 System.out.print("Te has equivocado " + dia +" "+ mes);
                 break;
         }
+        miScanner.close();
     }
 }
