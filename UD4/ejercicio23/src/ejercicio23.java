@@ -27,7 +27,7 @@ public class ejercicio23 {
             precioiva = baseim + reducido;
             System.out.printf("Precio IVA: %14.2f\n", precioiva);
         } else if (iva.equals("superreducido")) {
-            System.out.printf("IVA (4%%): %14.2f\n", superreducido);
+            System.out.printf("IVA (4%%): %16.2f\n", superreducido);
             precioiva = baseim + superreducido;
             System.out.printf("Precio IVA: %14.2f\n", precioiva);
         }
