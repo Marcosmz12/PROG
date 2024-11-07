@@ -7,8 +7,7 @@ public class ejercicio29 {
 
         System.out.print("¿Qué ha tomado de comer? (palmera, donut o pitufo): ");
         String comida = mScanner.nextLine();
-        System.out.print("¿Qué ha tomado de beber? (zumo o cafe):");
-        String bebida = mScanner.nextLine();
+        
 
         switch (comida) {
             case "palmera":
@@ -29,11 +28,14 @@ public class ejercicio29 {
                     double tortilla = 1.60;
                     System.out.printf("Pitufo con tortilla: %.2f €\n", tortilla);
                 }
-                break;
+                break; 
             default:
             System.out.println("No tenemos ese producto");
                 break;
             }
+
+            System.out.print("¿Qué ha tomado de beber? (zumo o cafe):");
+            String bebida = mScanner.nextLine();
         
         switch (bebida) {
             case "zumo":
@@ -48,6 +50,9 @@ public class ejercicio29 {
             System.out.println("No tenemos ese producto");
                 break;
         }
+
+        double total = 0;
+        
         mScanner.close();
 
     }
