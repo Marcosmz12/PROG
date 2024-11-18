@@ -8,21 +8,21 @@ public class ejercicio65 {
         int menurectangulo = 0;
 
         do {
-            for (int invent = 0 ; invent < anchorectangulo; invent++){
+            for (int invent = 0; invent < anchorectangulo; invent++) {
                 System.out.print("*");
             }
             System.out.println();
 
-            for (int invent = 0; invent < alturarectangulo -2; invent++){
+            for (int invent = 0; invent < alturarectangulo - 2; invent++) {
                 System.out.print("*");
 
-                for (int menosanch = 0; menosanch < anchorectangulo -2; menosanch ++){
+                for (int menosanch = 0; menosanch < anchorectangulo - 2; menosanch++) {
                     System.out.print(" ");
                 }
                 System.out.println("*");
             }
 
-            for (int invent = 0 ; invent < anchorectangulo; invent++){
+            for (int invent = 0; invent < anchorectangulo; invent++) {
                 System.out.print("*");
             }
             System.out.println();
@@ -40,13 +40,13 @@ public class ejercicio65 {
                     alturarectangulo++;
                     break;
                 case 2:
-                anchorectangulo--;
-                alturarectangulo--;
+                    anchorectangulo--;
+                    alturarectangulo--;
                     break;
                 case 3:
-                int cambio = anchorectangulo;
-                anchorectangulo = alturarectangulo;
-                alturarectangulo = cambio;
+                    int cambio = anchorectangulo;
+                    anchorectangulo = alturarectangulo;
+                    alturarectangulo = cambio;
                     break;
                 default:
                     break;
