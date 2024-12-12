@@ -1,18 +1,4 @@
 public class matematicas {
-    public static boolean esPrimo(int x) {
-        for (int i = 2; i < x; i++) {
-            if ((x % i) == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static int siguientePrimo(int x) {
-        while (!esPrimo(x++)) {
-        }
-        return x;
-    }
 
     public static double potencia(double base, int exponente) {
         return Math.pow(base, exponente);
@@ -31,12 +17,21 @@ public class matematicas {
         }
     }
 
-    public static int voltea(int x) {
-        for (int i = -1; i < x; i++) {
-            i = x;
-            x = x * 10;
-            i%=10;
+    public static long voltea(long x) {
+        long volte = 0;
+        while (x != 0) {
+            long num = x % 10;
+            volte = volte * 10 + num;
+            x /= 10;
         }
-        return x;
+        return volte;
+    }
+
+    public static int digitoN(long x, int b) {
+        x = voltea(x);
+        while (b-- > 0) {
+            x = x / 10;
+        }
+        return (int) x % 10;
     }
 }
