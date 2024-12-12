@@ -22,6 +22,6 @@ public class Caballo {
     }
 
     public String toString(){
-        return "Caballo" + "de raza" + "de color";
+        return "Caballo" + " raza" + " color";
     }
 }
