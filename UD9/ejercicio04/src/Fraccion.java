@@ -1,6 +1,6 @@
 public class Fraccion {
-    int numerador;
-    int denominador;
+    private int numerador;
+    private int denominador;
 
     Fraccion(int numerador, int denominador) {
         this.numerador = numerador;
@@ -15,7 +15,19 @@ public class Fraccion {
         return this.denominador;
     }
 
+    public String toString() {
+        return this.numerador + "/" + this.denominador;
+    }
+
     public Fraccion invierte() {
         return new Fraccion(this.denominador, this.numerador);
+    }
+
+    public Fraccion multiplica(int x) {
+        return new Fraccion(numerador * x, denominador * x);
+    }
+
+    public Fraccion divide (int x){
+        return new Fraccion(numerador / x, denominador / x);
     }
 }
