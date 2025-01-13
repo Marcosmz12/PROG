@@ -14,7 +14,7 @@ public class Ejercicio09 {
         System.out.println("Indicador de numeros pares e impares :");
         for (int i = 0; i < 8; i++) {
             System.out.print(n[i]);
-            if (n[i] %2 == 0) {
+            if (n[i] % 2 == 0) {
                 System.out.print(" es par");
             } else {
                 System.out.print(" es impar");
