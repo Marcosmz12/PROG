@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class GestionEstudiantes {
 
-    public static String registrarEstudiante() {
+    public static Estudiante registrarEstudiante() {
         String matricula = pedirCadena();
         String nombre = pedirCadena();
         int edad = pedirEntero();

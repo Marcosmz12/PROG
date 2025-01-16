@@ -16,6 +16,7 @@ public class ejercicio01b {
             gato[i].setColor(mScanner.nextLine());
             System.out.print("Raza : ");
             gato[i].setRaza(mScanner.nextLine());
+            System.out.print("==================================");
         }
 
         System.out.println("Datos de los gatos: ");
