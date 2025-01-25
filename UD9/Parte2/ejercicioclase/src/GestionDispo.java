@@ -8,7 +8,7 @@ public class GestionDispo {
 
         for (int i = 0; i < Dispositivo.getContadorDispo(); i++) {
             System.out.println(misDispo[i]);
-            ((Encendible)misDispo[i]).encender();
+            //((Encendible) misDispo[i]).encender();
         }
     }
 }

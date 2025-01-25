@@ -2,7 +2,7 @@ public class Computadora extends Dispositivo {
     private int ram;
     private int disco;
     private int procesador;
-    private boolean encendido;
+    private String encendido = "apagado";
     private String programa;
 
     public Computadora(int ram, int disco, int procesador, String marca) {
@@ -10,7 +10,7 @@ public class Computadora extends Dispositivo {
         this.ram = ram;
         this.disco = disco;
         this.procesador = procesador;
-        encendido = false;
+        encendido = "apagado";
         programa = " ";
     }
 
@@ -27,12 +27,12 @@ public class Computadora extends Dispositivo {
     }
 
     public void Encendible() {
-        encendido = true;
+        encendido = "Encendido";
         programa = "VisualStudio";
     }
 
     public void apagar(){
-        encendido = false;
+        encendido = "apagado";
         programa = " ";
         System.out.println("Ordenador apagado");
     }
