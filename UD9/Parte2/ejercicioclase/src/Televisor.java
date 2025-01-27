@@ -22,4 +22,9 @@ public class Televisor extends Dispositivo {
         return resolucion;
     }
 
+    @Override
+    public String toString() {
+        return "Televisor: [Marca: " + marca + " pulgadas: " + pulgadas + " pantalla: " + pantalla + " resolucion: " + resolucion + "]"; 
+    }
+
 }
