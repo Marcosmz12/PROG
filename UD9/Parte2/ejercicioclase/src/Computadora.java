@@ -1,8 +1,8 @@
-public class Computadora extends Dispositivo {
+public class Computadora extends Dispositivo implements Encendible {
     private int ram;
     private int disco;
     private int procesador;
-    private boolean encendido;
+    private String encendido;
     private String programa;
 
     public Computadora(int ram, int disco, int procesador, String marca) {
@@ -10,7 +10,7 @@ public class Computadora extends Dispositivo {
         this.ram = ram;
         this.disco = disco;
         this.procesador = procesador;
-        encendido = false;
+        encendido = "apagado";
         programa = " ";
     }
 
@@ -26,20 +26,24 @@ public class Computadora extends Dispositivo {
         return procesador;
     }
 
-    public void Encendible() {
-        encendido = true;
-        programa = "VisualStudio";
-    }
-
-    public void apagar(){
-        encendido = false;
-        programa = " ";
-        System.out.println("Ordenador apagado");
+    @Override
+    public String toString() {
+        return "Computador: [Marca: " + marca + " RAM: " + ram + " Disco: " + disco + " Procesador: " + procesador + "]"
+                + " " + encendido;
     }
 
     @Override
-    public String toString() {
-        return "Computador: [Marca: " + marca + " RAM: " + ram + " Disco: " + disco + " Procesador: " + procesador + "]";
+    public String encender() {
+        encendido = "encendido";
+        programa = "Visual Studio";
+        return encendido + programa;
+    }
+
+    @Override
+    public String apagar() {
+        encendido = "apagado";
+        programa = " ";
+        return encendido + programa;
     }
 
 }

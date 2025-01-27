@@ -1,5 +1,5 @@
 public interface Encendible {
-    public void encender();
+    public String encender();
     
-    public void apagar();
+    public String apagar();
 }
