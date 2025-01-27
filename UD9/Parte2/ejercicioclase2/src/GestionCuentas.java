@@ -16,7 +16,7 @@ public class GestionCuentas {
             System.out.println(miscuentas[i]);
             ((Operable) miscuentas[i]).calculoIntereses();
             ((Operable) miscuentas[i]).mostrarResultado();
-            System.out.println("================");
+            System.out.println("=================");
         }
     }
 }
