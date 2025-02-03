@@ -11,7 +11,7 @@ public class ColeccionDiscos {
         album.add(new Disco("2345", "Maka", "MAldiciones", "Urbano", 1));
         album.add(new Disco("3456", "Morad", "M.D.L.R", "Urbano", 1));
 
-        System.out.println("\n\nCOLECCIÓN DE DISCOS");
+        System.out.println("COLECCIÓN DE DISCOS");
         System.out.println("===================");
         System.out.println("1. Listado");
         System.out.println("2. Nuevo disco");
