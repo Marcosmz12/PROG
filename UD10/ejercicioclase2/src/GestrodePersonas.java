@@ -71,11 +71,13 @@ public class GestrodePersonas {
     }
 
     public static int pedirEntero(int opcion) {
+        Scanner mScanner = new Scanner(System.in);
         int numero = 0;
         boolean numeroerroimio = false;
         do {
             try {
-                numero = Integer.parseInt(System.console().readLine());
+                numero = mScanner.nextInt();
+                mScanner.nextLine();
                 if (numero < 6) {
                     numeroerroimio = false;
                 }
@@ -84,5 +86,6 @@ public class GestrodePersonas {
             }
         } while (numeroerroimio);
         return numero;
+        
     }
 }
