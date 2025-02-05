@@ -6,12 +6,14 @@ public class Cuentacorriente extends CuentaBancaria implements Operable {
 
     @Override
     public double calculoIntereses() {
-        return saldo = saldo * (tipoInteres / 100);
+        double resultado = saldo * (tipoInteres / 100);
+        System.out.println("Saldo: " + saldo + " x (Tipo de interés: " + tipoInteres + "/100)");
+        return resultado;
     }
 
     @Override
-    public String mostrarResultado() {
-        String ressultado = "El resultado es ";
-        return ressultado + saldo;
+    public void mostrarResultado() {
+        double resultado = calculoIntereses();
+        System.out.println("El resultado es: " + resultado);
     }
 }

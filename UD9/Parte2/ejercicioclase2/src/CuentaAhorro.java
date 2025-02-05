@@ -7,12 +7,14 @@ public class CuentaAhorro extends CuentaBancaria implements Operable {
     
     @Override
     public double calculoIntereses() {
-        return saldo = saldo * (tipoInteres / 100);
+        double resultado = saldo * (tipoInteres / 100);
+        System.out.println("saldo " + saldo + "x(tipo de intereses: " + tipoInteres + "/" + 100);
+        return resultado;
     }
 
     @Override
-    public String mostrarResultado() {
+    public void mostrarResultado() {
         String ressultado = "El resultado es ";
-        return ressultado + saldo;
+        System.out.println(ressultado + saldo);
     }
 }

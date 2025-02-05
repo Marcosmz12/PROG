@@ -1,9 +1,9 @@
-public class Televisor extends Dispositivo {
+public class Televisor extends Dispositivo implements Encendible {
     private int pulgadas;
     private String pantalla;
     private String resolucion;
 
-    public Televisor(String marca,int pulgadas, String pantalla, String resolucion) {
+    public Televisor(String marca, int pulgadas, String pantalla, String resolucion) {
         super(marca);
         this.pulgadas = pulgadas;
         this.pantalla = pantalla;
@@ -23,8 +23,23 @@ public class Televisor extends Dispositivo {
     }
 
     @Override
-    public String toString() {
-        return "Televisor: [Marca: " + marca + " pulgadas: " + pulgadas + " pantalla: " + pantalla + " resolucion: " + resolucion + "]"; 
+    public String encender() {
+        String encendido = "encendido";
+        String programa = "Neox";
+        System.out.println("Su Televisor a " + encendido + "y ha iniciado el programa " + programa);
+        return encendido + programa;
     }
 
+    @Override
+    public String apagar() {
+        String apagado = "encendido";
+        System.out.println("Su Televisor a " + apagado);
+        return apagado;
+    }
+
+    @Override
+    public String toString() {
+        return "Televisor: " + " marca: " + marca + " pulgadas: " + pulgadas + " pantalla: " + pantalla
+                + " resolucion: " + resolucion;
+    }
 }

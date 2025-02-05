@@ -10,8 +10,6 @@ public class Computadora extends Dispositivo implements Encendible {
         this.ram = ram;
         this.disco = disco;
         this.procesador = procesador;
-        encendido = "apagado";
-        programa = " ";
     }
 
     public int getRam() {
@@ -27,23 +25,23 @@ public class Computadora extends Dispositivo implements Encendible {
     }
 
     @Override
-    public String toString() {
-        return "Computador: [Marca: " + marca + " RAM: " + ram + " Disco: " + disco + " Procesador: " + procesador + "]"
-                + " " + encendido;
-    }
-
-    @Override
     public String encender() {
         encendido = "encendido";
         programa = "Visual Studio";
-        return encendido + programa;
+        System.out.println("Su computadora a " + encendido + " y ha iniciado el programa " + programa);
+        return encendido;
     }
 
     @Override
     public String apagar() {
         encendido = "apagado";
         programa = " ";
-        return encendido + programa;
+        System.out.println("Su computadora se ha " + encendido);
+        return encendido;
     }
 
+    @Override
+    public String toString() {
+        return "Computadora: "+ " marca: " + marca + " ram: " + ram + " disco: " + disco + " procesador: " + procesador;
+    }
 }

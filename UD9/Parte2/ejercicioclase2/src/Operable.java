@@ -1,5 +1,5 @@
 public interface Operable {
     public double calculoIntereses();
 
-    public String mostrarResultado();
+    public void mostrarResultado();
 }
