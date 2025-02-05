@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class GestrodePersonas {
+    public static final String RED_BRIGHT = "\033[0;91m"; // RED
+    public static final String GREEN_BRIGHT = "\033[0;92m"; // GREEN
+    public static final String YELLOW_BRIGHT = "\033[0;93m"; // YELLOW
+    public static final String RESET = "\033[0m"; // Text Reset
+
     public static void main(String[] args) throws Exception {
         Scanner mScanner = new Scanner(System.in);
         GestorPersonas mGestorPersonas = new GestorPersonas();
@@ -17,10 +22,8 @@ public class GestrodePersonas {
             System.out.println("6. Salir.");
             System.out.println("======================");
             System.out.print("Elija su opcion: ");
-            opcion = mScanner.nextInt();
-            mScanner.nextLine();
+            opcion = pedirEntero(0);
 
-            
             switch (opcion) {
                 case 1:
                     System.out.print("Nombre: ");
@@ -61,13 +64,25 @@ public class GestrodePersonas {
                 case 6:
                     System.out.println("Saliendo....");
                     break;
-                default:
-                    System.out.println("No es correcta su opcion: ");
-                    opcion = mScanner.nextInt();
-                    mScanner.nextLine();
             }
         } while (opcion != 6);
 
         mScanner.close();
+    }
+
+    public static int pedirEntero(int opcion) {
+        int numero = 0;
+        boolean numeroerroimio = false;
+        do {
+            try {
+                numero = Integer.parseInt(System.console().readLine());
+                if (numero < 6) {
+                    numeroerroimio = false;
+                }
+            } catch (Exception e) {
+                System.out.println(RED_BRIGHT+ "Se ha equivocado en la seleccion." + RESET);
+            }
+        } while (numeroerroimio);
+        return numero;
     }
 }
