@@ -14,13 +14,14 @@ public class GestorCoches implements CRUD<Coche, String> {
     ArrayList<Coche> misCoches = new ArrayList<>();
 
     public GestorCoches(File fichero) {
-        if (fichero.exists()) this.fichero = fichero;
+        if (fichero.exists())
+            this.fichero = fichero;
         else {
             try {
                 fichero.createNewFile();
             } catch (Exception e) {
                 System.out.println("No se pudo crear el fichero.");
-            } 
+            }
         }
     }
 
@@ -48,10 +49,11 @@ public class GestorCoches implements CRUD<Coche, String> {
     public Coche recuperarUno(String id) {
         try {
             BufferedReader br = new BufferedReader(new FileReader(fichero));
-            Coche coche = new Coche("", "", 0); 
+            Coche coche = new Coche("", "", 0);
             String linea = "";
             while ((linea = br.readLine()) != null) {
-                coche.deserializar(linea); // En lugar de ocupar más memoria con coches nuevos, reutilizamos siempre el mismo.
+                coche.deserializar(linea); // En lugar de ocupar más memoria con coches nuevos, reutilizamos siempre el
+                                           // mismo.
                 if (coche.getMatrícula().equals(id)) {
                     br.close();
                     return coche;
@@ -63,7 +65,7 @@ public class GestorCoches implements CRUD<Coche, String> {
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());
         }
-        return null;        
+        return null;
     }
 
     @Override
@@ -88,20 +90,20 @@ public class GestorCoches implements CRUD<Coche, String> {
     @Override
     public Coche eliminar(String id) {
         Coche cocheABorrar = recuperarUno(id);
-        Coche coche = new Coche("","",0);
+        Coche coche = new Coche("", "", 0);
         if (cocheABorrar == null) {
             System.out.println("La matrícula no se encuentra en el fichero y no se ha podido realizar el borrado.");
             return null;
         } else {
             try {
-                String nombreOriginalFichero = fichero.getName(); 
+                String nombreOriginalFichero = fichero.getName();
                 File ficheroModificado = new File(nombreOriginalFichero + ".tmp");
-                
+
                 if (!fichero.renameTo(ficheroModificado)) {
                     System.out.println("Problema al renombrar el fichero original.");
                     return null;
                 }
-                // Creamos un fichero nuevo 
+                // Creamos un fichero nuevo
                 fichero = new File(nombreOriginalFichero);
                 if (!fichero.exists()) {
                     try {
@@ -109,7 +111,7 @@ public class GestorCoches implements CRUD<Coche, String> {
                     } catch (Exception e) {
                         System.out.println("No se pudo crear el fichero.");
                         throw new IOException();
-                    } 
+                    }
                 }
 
                 BufferedReader br = new BufferedReader(new FileReader(ficheroModificado));
@@ -117,36 +119,38 @@ public class GestorCoches implements CRUD<Coche, String> {
                 String linea = "";
                 while ((linea = br.readLine()) != null) {
                     coche.deserializar(linea);
-                    if (!coche.getMatrícula().equalsIgnoreCase(id)) bw.write(linea + "\n");
+                    if (!coche.getMatrícula().equalsIgnoreCase(id))
+                        bw.write(linea + "\n");
                 }
                 br.close();
                 bw.close();
-                ficheroModificado.delete();            
+                ficheroModificado.delete();
             } catch (FileNotFoundException fnfe) {
                 System.out.println(fnfe.getMessage());
             } catch (IOException ioe) {
                 System.out.println(ioe.getMessage());
             }
             return cocheABorrar;
-        }   
+        }
     }
 
     @Override
     public Coche modificar(Coche cocheAModificar) {
         Coche coche = recuperarUno(cocheAModificar.getMatrícula());
         if (coche == null) {
-            System.out.println("La matrícula no se encuentra en el fichero y no se han podido realizar las modificaciones.");
+            System.out.println(
+                    "La matrícula no se encuentra en el fichero y no se han podido realizar las modificaciones.");
             return null;
         } else {
             try {
-                String nombreOriginalFichero = fichero.getName(); 
+                String nombreOriginalFichero = fichero.getName();
                 File ficheroModificado = new File(nombreOriginalFichero + ".tmp");
-                
+
                 if (!fichero.renameTo(ficheroModificado)) {
                     System.out.println("Problema al renombrar el fichero original.");
                     return null;
                 }
-                // Creamos un fichero nuevo 
+                // Creamos un fichero nuevo
                 fichero = new File(nombreOriginalFichero);
                 if (!fichero.exists()) {
                     try {
@@ -154,7 +158,7 @@ public class GestorCoches implements CRUD<Coche, String> {
                     } catch (Exception e) {
                         System.out.println("No se pudo crear el fichero.");
                         throw new IOException();
-                    } 
+                    }
                 }
 
                 BufferedReader br = new BufferedReader(new FileReader(ficheroModificado));
@@ -164,17 +168,18 @@ public class GestorCoches implements CRUD<Coche, String> {
                     coche.deserializar(linea);
                     if (coche.getMatrícula().equalsIgnoreCase(cocheAModificar.getMatrícula())) {
                         bw.write(cocheAModificar.serializar() + "\n");
-                  } else bw.write(linea + "\n");
+                    } else
+                        bw.write(linea + "\n");
                 }
                 br.close();
                 bw.close();
-                ficheroModificado.delete();            
+                ficheroModificado.delete();
             } catch (FileNotFoundException fnfe) {
                 System.out.println(fnfe.getMessage());
             } catch (IOException ioe) {
                 System.out.println(ioe.getMessage());
             }
             return cocheAModificar;
-        }   
+        }
     }
 }
