@@ -5,6 +5,10 @@ public class Socio {
     private int edad;
     private String localidad;
 
+    public Socio(){
+        this(0,"",0,0,"");
+    }
+
     public Socio(int id, String nombre, int estatura, int edad, String localidad) {
         this.id = id;
         this.nombre = nombre;
