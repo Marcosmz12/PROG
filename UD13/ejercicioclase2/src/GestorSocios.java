@@ -24,7 +24,7 @@ public class GestorSocios implements CRUD<Socio> {
         ArrayList<Socio> result = new ArrayList<Socio>();
         String sqlQuery = "SELECT * FROM socio WHERE " + column + " = ?";
 
-        try (PreparedStatement stmt = this.conn.preparedStatement(sqlQuery)) {
+        try (PreparedStatement stmt = this.conn.prepareStatement(sqlQuery)) {
             stmt.setString(1, value);
 
             // Ejecución de la consulta
