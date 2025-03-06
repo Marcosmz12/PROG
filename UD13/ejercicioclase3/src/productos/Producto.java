@@ -134,6 +134,7 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
     // variables de instancia, constructor(es), getters, setters...
     // Añade un método toString() que permita visualizar las listas de productos
     // con campos coloreados y alineados en columnas

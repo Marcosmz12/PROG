@@ -51,6 +51,8 @@ public interface CRUD<T> {
      */
     public boolean delete(long id) throws SQLException;
 
+    public String serializar();
+    public void desearilar();
     public boolean importar(String basedatos);
     public boolean exportar(String baseDatos);
 }
