@@ -1,0 +1,37 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 19 mar 2025, 16:38:36
+    Author     : nocturno
+*/
+root{
+    display: block;
+}
+
+body{
+    font-family:sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: gold;
+    text-shadow: #242424 2px 2px 2px;
+}
+
+.dinero{
+    width: 400px;
+    height: 200px;
+    background-color: gold;
+    margin: auto;
+    box-shadow: #242424 4px 4px 4px;
+    background-image: url(euros-reverso.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+form {
+    padding: 20px;
+    text-align: center;
+}
