@@ -11,7 +11,7 @@
     <body>
         <%
             Cookie cookie = dameCookie(request, "alguien");
-            String jsoDescodifiada = URLDecoder.decode(cookie.getValue(), "UTF-8");
+            String jsonDescodifiada = URLDecoder.decode(cookie.getValue(), "UTF-8");
             ObjectMapper objectMapper = new ObjectMapper();
             Persona p = objectMapper.readValue(cookie.getValue(), Persona.class);
             out.println("Contenido de la cookie <b>alguien</b>:<br>");
