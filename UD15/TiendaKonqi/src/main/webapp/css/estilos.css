@@ -1,0 +1,77 @@
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #111;
+    --card-bg: #fff;
+    --btn-primary: #0d6efd;
+    --cart-bg: linear-gradient(135deg, #C3F5B7, #61B543);
+}
+
+[data-theme="oscuro"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --btn-primary: #2196f3;    
+    --cart-bg: linear-gradient(135deg, #263238, #37474f);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    padding-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-body a.btn {
+    color: #fff !important;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-primary {    
+    color: #fff !important;
+    background-color: var(--btn-primary);
+    border: none;
+}
+
+.carrito {
+    padding: 1rem;
+    border-radius: 8px;
+    background: var(--cart-bg);
+    transition: background 0.3s ease;
+}
+
+.carrito .card {
+    margin-bottom: 10px;
+}
+
+.language-switch img {
+    margin-right: 8px;
+}
+
+h1 {
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, a, .card-title, .card-text, .btn, .theme-toggle {
+    color: var(--text-color) !important;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: var(--text-color);
+}
